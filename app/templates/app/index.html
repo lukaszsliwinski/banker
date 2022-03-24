@@ -8,26 +8,27 @@
     <title>Banker</title>
 </head>
 <body>
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Code</th>
-                <th>Price</th>
-                <th>Date</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for element in data %}
-            <tr>
-                <td>{{ element.0 }}</td>
-                <td>{{ element.1 }}</td>
-                <td>{{ element.2 }}</td>
-                <td>{{ element.3 }}</td>
-            </tr>
-            {% endfor %}   
-        </tbody>
+    <select id="sorting_type">
+        <option value="asc" selected="selected">asc</option>
+        <option value="desc">desc</option>
+    </select>
+    <button onclick="sort()">submit</button>
+    <table id="table">
+        <tr>
+            <th>Name</th>
+            <th>Code</th>
+            <th>Price</th>
+            <th>Date</th>
+        </tr>
+        {% for element in data %}
+        <tr>
+            <td>{{ element.0 }}</td>
+            <td>{{ element.1 }}</td>
+            <td>{{ element.2 }}</td>
+            <td>{{ element.3 }}</td>
+        </tr>
+        {% endfor %}   
     </table>
-
+    <script type="text/javascript" src="{% static 'app/js/sort.js' %}"></script>
 </body>
 </html>
