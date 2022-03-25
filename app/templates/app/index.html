@@ -10,6 +10,8 @@
 </head>
 <body>
     <div class="app">
+
+        <!-- sort by name form -->
         <div class="sort">
             <div class="label">Sort by name: </div>
             <select id="sorting_type">
@@ -18,6 +20,8 @@
             </select>
             <button onclick="sort()">SUBMIT</button>
         </div>
+
+        <!-- table with stock quotes-->
         <table id="table">
             <tr>
                 <th>Name</th>
@@ -35,6 +39,7 @@
             {% endfor %}   
         </table>
     </div>
+    
     <script type="text/javascript" src="{% static 'app/js/sort.js' %}"></script>
 </body>
 </html>
