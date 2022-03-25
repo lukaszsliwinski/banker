@@ -6,29 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banker</title>
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
 </head>
 <body>
-    <select id="sorting_type">
-        <option value="asc" selected="selected">asc</option>
-        <option value="desc">desc</option>
-    </select>
-    <button onclick="sort()">submit</button>
-    <table id="table">
-        <tr>
-            <th>Name</th>
-            <th>Code</th>
-            <th>Price</th>
-            <th>Date</th>
-        </tr>
-        {% for element in data %}
-        <tr>
-            <td>{{ element.0 }}</td>
-            <td>{{ element.1 }}</td>
-            <td>{{ element.2 }}</td>
-            <td>{{ element.3 }}</td>
-        </tr>
-        {% endfor %}   
-    </table>
+    <div class="app">
+        <div class="sort">
+            <div class="label">Sort by name: </div>
+            <select id="sorting_type">
+                <option value="asc" selected="selected">ASC</option>
+                <option value="desc">DESC</option>
+            </select>
+            <button onclick="sort()">SUBMIT</button>
+        </div>
+        <table id="table">
+            <tr>
+                <th>Name</th>
+                <th>Code</th>
+                <th>Price</th>
+                <th>Date</th>
+            </tr>
+            {% for element in data %}
+            <tr>
+                <td>{{ element.0 }}</td>
+                <td>{{ element.1 }}</td>
+                <td>{{ element.2 }}</td>
+                <td>{{ element.3 }}</td>
+            </tr>
+            {% endfor %}   
+        </table>
+    </div>
     <script type="text/javascript" src="{% static 'app/js/sort.js' %}"></script>
 </body>
 </html>
